@@ -27,7 +27,7 @@
     letter-spacing:-0.02em;
   }
 
-  /* ---------- NAV ---------- */
+  /* NAV */
   nav{
     position:sticky; top:0; z-index:100;
     background:var(--black);
@@ -36,29 +36,42 @@
   }
   .nav-inner{
     display:flex; width:100%; max-width:1100px;
-    overflow-x:auto;
+    overflow-x:auto; align-items:center;
   }
   nav a{
-    color:#ddd;
-    text-decoration:none;
-    font-size:0.85rem;
-    font-weight:600;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    padding:18px 22px;
-    white-space:nowrap;
+    color:#ddd; text-decoration:none;
+    font-size:0.85rem; font-weight:600;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:18px 22px; white-space:nowrap;
     border-bottom:3px solid transparent;
     transition:color .2s, border-color .2s;
   }
   nav a:hover, nav a:focus-visible{ color:var(--white); border-color:var(--grey); }
 
-  /* ---------- HERO / HEADER ---------- */
+  /* language toggle */
+  .lang-toggle{
+    margin-left:auto;
+    display:flex; gap:0; flex-shrink:0;
+    border:1px solid #444;
+    border-radius:3px;
+    overflow:hidden;
+    margin-right:8px;
+  }
+  .lang-btn{
+    background:none; border:none; cursor:pointer;
+    color:#aaa; font-size:0.75rem; font-weight:700;
+    letter-spacing:0.08em; padding:6px 11px;
+    transition:background .15s, color .15s;
+  }
+  .lang-btn.active{ background:var(--white); color:var(--black); }
+  .lang-btn:hover:not(.active){ color:var(--white); }
+
+  /* HERO */
   header.hero{
     display:flex; flex-wrap:wrap;
     max-width:1100px; margin:0 auto;
     padding:60px 24px 0 24px;
-    align-items:center;
-    gap:40px;
+    align-items:center; gap:40px;
   }
   .hero-photo{
     width:280px; height:380px; flex-shrink:0;
@@ -75,19 +88,13 @@
     display:inline-block;
     font-size:0.95rem; font-weight:700;
     letter-spacing:0.04em;
-    padding:12px 20px;
-    margin-bottom:14px;
+    padding:12px 20px; margin-bottom:14px;
   }
   .hero-sub{
-    color:var(--grey-dark);
-    font-size:1.02rem;
-    max-width:520px;
-    margin-top:10px;
+    color:var(--grey-dark); font-size:1.02rem;
+    max-width:520px; margin-top:10px;
   }
-  .hero-bar{
-    height:14px; background:var(--grey-light);
-    margin-top:46px;
-  }
+  .hero-bar{ height:14px; background:var(--grey-light); margin-top:46px; }
 
   section{
     max-width:1100px; margin:0 auto;
@@ -95,7 +102,7 @@
   }
   section + section{ border-top:1px solid var(--grey-light); }
 
-  /* ---------- BAR LIST (landing page) ---------- */
+  /* BAR LIST */
   .bar-list{ border-top:1px solid var(--black); }
   .bar-item{ border-bottom:1px solid var(--grey-light); }
   .bar-head{
@@ -103,126 +110,60 @@
     display:flex; align-items:center; gap:24px;
     padding:26px 4px;
   }
-  .bar-num{
-    font-size:0.78rem; font-weight:700; color:var(--grey); letter-spacing:0.08em;
-    width:28px; flex-shrink:0;
-  }
-  .bar-title{
-    font-family:'Archivo','Inter',sans-serif; font-weight:800; font-size:1.3rem;
-    color:var(--black); flex:1;
-  }
-  .bar-plus{
-    font-size:1.6rem; font-weight:400; color:var(--grey);
-    transition:transform .25s ease; flex-shrink:0;
-  }
+  .bar-num{ font-size:0.78rem; font-weight:700; color:var(--grey); letter-spacing:0.08em; width:28px; flex-shrink:0; }
+  .bar-title{ font-family:'Archivo','Inter',sans-serif; font-weight:800; font-size:1.3rem; color:var(--black); flex:1; }
+  .bar-plus{ font-size:1.6rem; font-weight:400; color:var(--grey); transition:transform .25s ease; flex-shrink:0; }
   .bar-head[aria-expanded="true"] .bar-plus{ transform:rotate(45deg); }
   .bar-head:hover .bar-title{ color:var(--grey-dark); }
   .bar-panel{ display:none; }
   .bar-panel.open{ display:block; }
   .bar-panel-inner{ padding:6px 4px 36px 4px; }
-  @media (max-width:640px){
-    .bar-title{ font-size:1.05rem; }
-  }
 
-  .eyebrow{
-    font-size:0.8rem; font-weight:700; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--grey);
-    margin-bottom:10px;
-  }
-  section h2{ font-size:2rem; margin-bottom:28px; }
-
-  /* ---------- UEBER MICH ---------- */
-  .about-grid{
-    display:grid; grid-template-columns:1.3fr 1fr; gap:50px;
-  }
-  .about-grid p{ margin-bottom:16px; color:var(--grey-dark); max-width:60ch;}
+  /* ABOUT GRID */
+  .about-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:50px; }
+  .about-grid p{ margin-bottom:16px; color:var(--grey-dark); max-width:60ch; }
   .fact-list{ list-style:none; }
-  .fact-list li{
-    padding:14px 0; border-bottom:1px solid var(--grey-light);
-    display:flex; flex-direction:column; gap:4px; font-size:0.95rem;
-  }
+  .fact-list li{ padding:14px 0; border-bottom:1px solid var(--grey-light); display:flex; flex-direction:column; gap:4px; font-size:0.95rem; }
   .fact-list span:first-child{ color:var(--grey); font-weight:600; }
   .fact-list span:last-child{ font-weight:600; }
 
-  /* ---------- KOMPETENZEN ACCORDION ---------- */
+  /* KOMPETENZEN ACCORDION */
   .acc{ border-top:1px solid var(--black); }
   .acc-item{ border-bottom:1px solid var(--grey-light); }
   .acc-head{
-    width:100%; text-align:left; background:none; border:none;
-    cursor:pointer;
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:space-between;
     padding:24px 0;
     font-family:'Archivo','Inter',sans-serif;
-    font-size:1.15rem; font-weight:700;
-    color:var(--black);
+    font-size:1.15rem; font-weight:700; color:var(--black);
   }
-  .acc-head .plus{
-    font-size:1.4rem; font-weight:400; color:var(--grey);
-    transition:transform .25s ease;
-    flex-shrink:0; margin-left:16px;
-  }
+  .acc-head .plus{ font-size:1.4rem; font-weight:400; color:var(--grey); transition:transform .25s ease; flex-shrink:0; margin-left:16px; }
   .acc-head[aria-expanded="true"] .plus{ transform:rotate(45deg); }
-  .acc-panel{
-    display:none;
-  }
-  .acc-panel.open{
-    display:block;
-  }
+  .acc-panel{ display:none; }
+  .acc-panel.open{ display:block; }
   .acc-panel-inner{ padding:0 0 26px 0; }
-
-  /* sub-items (level 2) */
   .sub-item{ border-top:1px solid var(--grey-light); }
   .sub-item:first-child{ border-top:none; }
-  .sub-head{
-    width:100%; text-align:left; background:var(--grey-bg); border:none;
-    padding:16px 18px;
-    font-size:0.98rem; font-weight:600; color:var(--grey-dark);
-  }
-  .sub-panel-inner{ padding:4px 18px 18px 18px; }
+  .sub-head{ width:100%; text-align:left; background:var(--grey-bg); border:none; padding:16px 18px; font-size:0.98rem; font-weight:600; color:var(--grey-dark); }
+  .sub-panel-inner{ padding:4px 18px 18px 18px; background:var(--grey-bg); }
   .sub-panel-inner ul{ list-style:none; }
-  .sub-panel-inner li{
-    position:relative; padding:8px 0 8px 18px;
-    font-size:0.92rem; color:var(--grey-dark);
-  }
-  .sub-panel-inner li::before{
-    content:"—"; position:absolute; left:0; color:var(--grey);
-  }
+  .sub-panel-inner li{ position:relative; padding:8px 0 8px 18px; font-size:0.92rem; color:var(--grey-dark); }
+  .sub-panel-inner li::before{ content:"—"; position:absolute; left:0; color:var(--grey); }
 
-  /* ---------- WERDEGANG ---------- */
-  .placeholder-box{
-    border:1px dashed var(--grey);
-    padding:32px; color:var(--grey-dark);
-    font-size:0.95rem;
-  }
+  /* CONTACT */
+  .contact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; margin-top:30px; }
+  .contact-grid a, .contact-grid div{ display:block; color:var(--grey-dark); text-decoration:none; font-size:0.95rem; }
+  .contact-grid .label{ display:block; color:var(--grey); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; }
+  .contact-grid a:hover{ color:var(--black); }
 
-  /* ---------- KONTAKT ---------- */
-  .contact-bar{
-    background:var(--black); color:var(--white);
-  }
-  .contact-bar h2{ color:var(--white); }
-  .contact-grid{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:24px; margin-top:30px;
-  }
-  .contact-grid a, .contact-grid div{
-    display:block; color:#ddd; text-decoration:none; font-size:0.95rem;
-  }
-  .contact-grid .label{
-    display:block; color:var(--grey); font-size:0.78rem;
-    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;
-  }
-  .contact-grid a:hover{ color:var(--white); }
-
-  footer{
-    text-align:center; padding:26px; font-size:0.8rem; color:var(--grey);
-    background:var(--black);
-  }
+  footer{ text-align:center; padding:26px; font-size:0.8rem; color:var(--grey); background:var(--black); }
 
   @media (max-width:640px){
     header.hero{ padding-top:40px; }
     .hero-photo{ width:100%; height:300px; }
     .about-grid{ grid-template-columns:1fr; }
     section{ padding:56px 20px; }
+    .bar-title{ font-size:1.05rem; }
   }
 </style>
 </head>
@@ -230,20 +171,24 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#start">Start</a>
-    <a href="#" data-open="panel-ueber-mich">Über mich</a>
-    <a href="#" data-open="panel-kompetenzen">Kompetenzen</a>
-    <a href="#" data-open="panel-werdegang">Werdegang</a>
-    <a href="#" data-open="panel-kontakt">Kontakt</a>
+    <a href="#start" id="nav-start">Start</a>
+    <a href="#" data-open="panel-ueber-mich" id="nav-about">Über mich</a>
+    <a href="#" data-open="panel-kompetenzen" id="nav-skills">Kompetenzen</a>
+    <a href="#" data-open="panel-werdegang" id="nav-career">Werdegang</a>
+    <a href="#" data-open="panel-kontakt" id="nav-contact">Kontakt</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </nav>
 
 <header class="hero" id="start">
-  <div class="hero-photo" role="img" aria-label="Portrait von Patrick Kordt"></div>
+  <div class="hero-photo" role="img" aria-label="Portrait Patrick Kordt"></div>
   <div class="hero-text">
     <h1>Patrick Kordt</h1>
-    <span class="role-bar">HR Business Partner</span>
-    <p class="hero-sub">empathisch · integer · strategisch · kommunikationsstark · lösungsorientiert</p>
+    <span class="role-bar" id="hero-role">HR Business Partner</span>
+    <p class="hero-sub" id="hero-sub">empathisch · integer · strategisch · kommunikationsstark · lösungsorientiert</p>
   </div>
 </header>
 <div class="hero-bar" style="max-width:1100px; margin:0 auto; height:14px; background:var(--grey-light);"></div>
@@ -254,22 +199,22 @@
     <div class="bar-item">
       <button class="bar-head" aria-expanded="false" data-target="panel-ueber-mich">
         <span class="bar-num">01</span>
-        <span class="bar-title">Wer ich bin</span>
+        <span class="bar-title" id="bar-about">Wer ich bin</span>
         <span class="bar-plus">+</span>
       </button>
       <div class="bar-panel" id="panel-ueber-mich">
         <div class="bar-panel-inner">
           <div class="about-grid">
             <div>
-              <p>Mit über zehn Jahren Erfahrung im Human Resources Management bin ich ein vielseitiger HR-Generalist mit fundierter Expertise entlang des gesamten Employee Lifecycles. Durch meine Tätigkeit in der Personaldienstleistung habe ich Einblicke in die HR-Prozesse unterschiedlichster Unternehmen und Branchen gewonnen und diese mit den praktischen Anforderungen einer HR-Rolle im produzierenden Gewerbe ergänzt.</p>
-              <p>Kommunikationsstärke, Durchsetzungsvermögen und Fingerspitzengefühl zeichnen mich ebenso aus wie eine pragmatische, lösungsorientierte Arbeitsweise. Mit einer positiven Grundeinstellung und einer Prise Humor gelingt es mir, vertrauensvolle Beziehungen aufzubauen, Veränderungsprozesse erfolgreich zu begleiten und HR als verlässlichen sowie unternehmerisch denkenden Business Partner zu positionieren.</p>
+              <p id="about-p1">Mit über zehn Jahren Erfahrung im Human Resources Management bin ich ein vielseitiger HR-Generalist mit fundierter Expertise entlang des gesamten Employee Lifecycles. Durch meine Tätigkeit in der Personaldienstleistung habe ich Einblicke in die HR-Prozesse unterschiedlichster Unternehmen und Branchen gewonnen und diese mit den praktischen Anforderungen einer HR-Rolle im produzierenden Gewerbe ergänzt.</p>
+              <p id="about-p2">Kommunikationsstärke, Durchsetzungsvermögen und Fingerspitzengefühl zeichnen mich ebenso aus wie eine pragmatische, lösungsorientierte Arbeitsweise. Mit einer positiven Grundeinstellung und einer Prise Humor gelingt es mir, vertrauensvolle Beziehungen aufzubauen, Veränderungsprozesse erfolgreich zu begleiten und HR als verlässlichen sowie unternehmerisch denkenden Business Partner zu positionieren.</p>
             </div>
             <ul class="fact-list">
-              <li><span>Alter</span><span>42</span></li>
-              <li><span>Standort</span><span>48720 Rosendahl</span></li>
-              <li><span>Aktuelle Position</span><span>Senior Business Consultant, Adecco</span></li>
-              <li><span>Region</span><span>Nord/West</span></li>
-              <li><span>Erfahrung</span><span>10+ Jahre HR-Management</span></li>
+              <li><span id="fl-age-l">Alter</span><span>42</span></li>
+              <li><span id="fl-loc-l">Standort</span><span>48720 Rosendahl</span></li>
+              <li><span id="fl-pos-l">Aktuelle Position</span><span>Senior Business Consultant, Adecco</span></li>
+              <li><span id="fl-reg-l">Region</span><span>Nord/West</span></li>
+              <li><span id="fl-exp-l">Erfahrung</span><span id="fl-exp-v">10+ Jahre HR-Management</span></li>
             </ul>
           </div>
         </div>
@@ -279,7 +224,7 @@
     <div class="bar-item">
       <button class="bar-head" aria-expanded="false" data-target="panel-kompetenzen">
         <span class="bar-num">02</span>
-        <span class="bar-title">Kompetenzen</span>
+        <span class="bar-title" id="bar-skills">Kompetenzen</span>
         <span class="bar-plus">+</span>
       </button>
       <div class="bar-panel" id="panel-kompetenzen">
@@ -292,18 +237,18 @@
     <div class="bar-item">
       <button class="bar-head" aria-expanded="false" data-target="panel-werdegang">
         <span class="bar-num">03</span>
-        <span class="bar-title">Werdegang</span>
+        <span class="bar-title" id="bar-career">Werdegang</span>
         <span class="bar-plus">+</span>
       </button>
       <div class="bar-panel" id="panel-werdegang">
         <div class="bar-panel-inner">
           <div class="about-grid" style="grid-template-columns:1fr;">
             <div>
-              <p>Mit kaufmännischem Hintergrund und einem frühen Einstieg ins Personalwesen habe ich meine berufliche Laufbahn gezielt an der Schnittstelle von HR, Recruiting, Vertrieb und Unternehmensentwicklung aufgebaut. Prägende Stationen bei Personaldienstleistern umfassten den Aufbau belastbarer Strukturen, die Entwicklung und Umsetzung wirksamer Recruiting- und Active-Sourcing-Maßnahmen, die Begleitung personalrelevanter Prozesse sowie die Zusammenarbeit im internationalen Umfeld — einschließlich Einsätzen vor Ort im Ausland. Ergänzt wird mein Profil durch Erfahrung als Referent an internationalen Universitäten, ausgeprägte Kommunikationsstärke, Fingerspitzengefühl und eine klare unternehmerische Denkweise.</p>
-              <p>Der Wechsel in das verarbeitende Gewerbe ermöglichte es mir, diese Erfahrung in einem produzierenden Umfeld weiter auszubauen und Verantwortung als Führungskraft bis hin zur Prokura zu übernehmen. Die enge Zusammenarbeit mit der Geschäftsführung, die Verantwortung für Standort, Mitarbeitende und Strukturen sowie die Weiterentwicklung von Prozessen auf operativer und strategischer Ebene schärften mein Profil als HR-Generalist und unternehmerisch geprägte Führungspersönlichkeit. Heute verbinde ich diese Erfahrung mit meiner Tätigkeit als Senior Business Consultant und einem hohen Anspruch an praxisnahe, wirksame Personalarbeit.</p>
-              <p>Seit Mai 2026 bin ich geprüfter Personalreferent (IHK) und habe damit mein praktisches HR-Profil um ein fundiertes theoretisches Fundament ergänzt.</p>
-              <p>Privat bin ich ein absoluter Familienmensch mit einer Vorliebe für Gesellschaftsspiele, Modellbau und Kochen.</p>
-              <p>Gerne stelle ich Ihnen meine vollständigen Unterlagen auf Anfrage zur Verfügung.</p>
+              <p id="career-p1">Mit kaufmännischem Hintergrund und einem frühen Einstieg ins Personalwesen habe ich meine berufliche Laufbahn gezielt an der Schnittstelle von HR, Recruiting, Vertrieb und Unternehmensentwicklung aufgebaut. Prägende Stationen bei Personaldienstleistern umfassten den Aufbau belastbarer Strukturen, die Entwicklung und Umsetzung wirksamer Recruiting- und Active-Sourcing-Maßnahmen, die Begleitung personalrelevanter Prozesse sowie die Zusammenarbeit im internationalen Umfeld — einschließlich Einsätzen vor Ort im Ausland. Ergänzt wird mein Profil durch Erfahrung als Referent an internationalen Universitäten, ausgeprägte Kommunikationsstärke, Fingerspitzengefühl und eine klare unternehmerische Denkweise.</p>
+              <p id="career-p2">Der Wechsel in das verarbeitende Gewerbe ermöglichte es mir, diese Erfahrung in einem produzierenden Umfeld weiter auszubauen und Verantwortung als Führungskraft bis hin zur Prokura zu übernehmen. Die enge Zusammenarbeit mit der Geschäftsführung, die Verantwortung für Standort, Mitarbeitende und Strukturen sowie die Weiterentwicklung von Prozessen auf operativer und strategischer Ebene schärften mein Profil als HR-Generalist und unternehmerisch geprägte Führungspersönlichkeit. Heute verbinde ich diese Erfahrung mit meiner Tätigkeit als Senior Business Consultant und einem hohen Anspruch an praxisnahe, wirksame Personalarbeit.</p>
+              <p id="career-p3">Seit Mai 2026 bin ich geprüfter Personalreferent (IHK) und habe damit mein praktisches HR-Profil um ein fundiertes theoretisches Fundament ergänzt.</p>
+              <p id="career-p4">Privat bin ich ein absoluter Familienmensch mit einer Vorliebe für Gesellschaftsspiele, Modellbau und Kochen.</p>
+              <p id="career-p5">Gerne stelle ich Ihnen meine vollständigen Unterlagen auf Anfrage zur Verfügung.</p>
             </div>
           </div>
         </div>
@@ -313,22 +258,22 @@
     <div class="bar-item">
       <button class="bar-head" aria-expanded="false" data-target="panel-kontakt">
         <span class="bar-num">04</span>
-        <span class="bar-title">Kontakt</span>
+        <span class="bar-title" id="bar-contact">Kontakt</span>
         <span class="bar-plus">+</span>
       </button>
       <div class="bar-panel" id="panel-kontakt">
         <div class="bar-panel-inner">
-          <div class="contact-grid" style="color:var(--black);">
+          <div class="contact-grid">
             <div>
-              <span class="label" style="color:var(--grey);">E-Mail</span>
-              <a href="mailto:pkordt@gmx.de" style="color:var(--black);">pkordt@gmx.de</a>
+              <span class="label" id="ct-email-l">E-Mail</span>
+              <a href="mailto:pkordt@gmx.de">pkordt@gmx.de</a>
             </div>
             <div>
-              <span class="label" style="color:var(--grey);">Telefon</span>
-              <a href="tel:+491788027818" style="color:var(--black);">+49 178 802 7818</a>
+              <span class="label" id="ct-phone-l">Telefon</span>
+              <a href="tel:+491788027818">+49 178 802 7818</a>
             </div>
             <div>
-              <span class="label" style="color:var(--grey);">Standort</span>
+              <span class="label" id="ct-loc-l">Standort</span>
               <div>48720 Rosendahl</div>
             </div>
           </div>
@@ -342,115 +287,234 @@
 <footer>© 2026 Patrick Kordt</footer>
 
 <script>
-const data = [
-  {
-    title: "Strategische Beratung an der Schnittstelle von HR und Business",
-    subs: [
-      { title: "Übersetzung unternehmerischer Ziele in wirksame personalstrategische Maßnahmen", points: [] },
-      { title: "Beratung von Management und Führungskräften bei organisatorischen und personellen Entscheidungen", points: [] },
-      { title: "Auswertung relevanter KPI als Grundlage für personalstrategische Empfehlungen und Entscheidungen", points: [] }
-    ]
+// ─── TRANSLATIONS ────────────────────────────────────────────────────────────
+const t = {
+  de: {
+    "nav-about":   "Über mich",
+    "nav-skills":  "Kompetenzen",
+    "nav-career":  "Werdegang",
+    "nav-contact": "Kontakt",
+    "hero-role":   "HR Business Partner",
+    "hero-sub":    "empathisch · integer · strategisch · kommunikationsstark · lösungsorientiert",
+    "bar-about":   "Wer ich bin",
+    "bar-skills":  "Kompetenzen",
+    "bar-career":  "Werdegang",
+    "bar-contact": "Kontakt",
+    "about-p1":    "Mit über zehn Jahren Erfahrung im Human Resources Management bin ich ein vielseitiger HR-Generalist mit fundierter Expertise entlang des gesamten Employee Lifecycles. Durch meine Tätigkeit in der Personaldienstleistung habe ich Einblicke in die HR-Prozesse unterschiedlichster Unternehmen und Branchen gewonnen und diese mit den praktischen Anforderungen einer HR-Rolle im produzierenden Gewerbe ergänzt.",
+    "about-p2":    "Kommunikationsstärke, Durchsetzungsvermögen und Fingerspitzengefühl zeichnen mich ebenso aus wie eine pragmatische, lösungsorientierte Arbeitsweise. Mit einer positiven Grundeinstellung und einer Prise Humor gelingt es mir, vertrauensvolle Beziehungen aufzubauen, Veränderungsprozesse erfolgreich zu begleiten und HR als verlässlichen sowie unternehmerisch denkenden Business Partner zu positionieren.",
+    "fl-age-l":    "Alter",
+    "fl-loc-l":    "Standort",
+    "fl-pos-l":    "Aktuelle Position",
+    "fl-reg-l":    "Region",
+    "fl-exp-l":    "Erfahrung",
+    "fl-exp-v":    "10+ Jahre HR-Management",
+    "career-p1":   "Mit kaufmännischem Hintergrund und einem frühen Einstieg ins Personalwesen habe ich meine berufliche Laufbahn gezielt an der Schnittstelle von HR, Recruiting, Vertrieb und Unternehmensentwicklung aufgebaut. Prägende Stationen bei Personaldienstleistern umfassten den Aufbau belastbarer Strukturen, die Entwicklung und Umsetzung wirksamer Recruiting- und Active-Sourcing-Maßnahmen, die Begleitung personalrelevanter Prozesse sowie die Zusammenarbeit im internationalen Umfeld — einschließlich Einsätzen vor Ort im Ausland. Ergänzt wird mein Profil durch Erfahrung als Referent an internationalen Universitäten, ausgeprägte Kommunikationsstärke, Fingerspitzengefühl und eine klare unternehmerische Denkweise.",
+    "career-p2":   "Der Wechsel in das verarbeitende Gewerbe ermöglichte es mir, diese Erfahrung in einem produzierenden Umfeld weiter auszubauen und Verantwortung als Führungskraft bis hin zur Prokura zu übernehmen. Die enge Zusammenarbeit mit der Geschäftsführung, die Verantwortung für Standort, Mitarbeitende und Strukturen sowie die Weiterentwicklung von Prozessen auf operativer und strategischer Ebene schärften mein Profil als HR-Generalist und unternehmerisch geprägte Führungspersönlichkeit. Heute verbinde ich diese Erfahrung mit meiner Tätigkeit als Senior Business Consultant und einem hohen Anspruch an praxisnahe, wirksame Personalarbeit.",
+    "career-p3":   "Seit Mai 2026 bin ich geprüfter Personalreferent (IHK) und habe damit mein praktisches HR-Profil um ein fundiertes theoretisches Fundament ergänzt.",
+    "career-p4":   "Privat bin ich ein absoluter Familienmensch mit einer Vorliebe für Gesellschaftsspiele, Modellbau und Kochen.",
+    "career-p5":   "Gerne stelle ich Ihnen meine vollständigen Unterlagen auf Anfrage zur Verfügung.",
+    "ct-email-l":  "E-Mail",
+    "ct-phone-l":  "Telefon",
+    "ct-loc-l":    "Standort",
   },
-  {
-    title: "Sparring und Unterstützung von Führungskräften",
-    subs: [
-      { title: "Beratung in Führungsfragen, Konfliktsituationen und anspruchsvollen Mitarbeitergesprächen", points: [] },
-      { title: "Unterstützung bei der Entwicklung eines zeitgemäßen Führungsverständnisses und einer modernen Unternehmenskultur", points: [] },
-      { title: "Begleitung von Führungskräften in Veränderungsprozessen und bei schwierigen Entscheidungen", points: [] }
-    ]
-  },
-  {
-    title: "Gestaltung des Employee Lifecycles",
-    subs: [
-      { title: "Begleitung aller relevanten Phasen vom Recruiting über Onboarding und Entwicklung bis hin zu Trennungssituationen", points: [] },
-      { title: "Sicherstellung einer konsistenten und positiven Employee Experience entlang des gesamten Beschäftigungsverhältnisses", points: [] },
-      { title: "Entwicklung passender Maßnahmen zur Mitarbeiterbindung, Leistungsförderung und Nachfolgeplanung", points: [] }
-    ]
-  },
-  {
-    title: "Begleitung von Veränderungs- und Organisationsentwicklungsprozessen",
-    subs: [
-      { title: "Unterstützung bei Restrukturierungen, Wachstumsphasen und kulturellen Veränderungsprozessen", points: [] },
-      { title: "Weiterentwicklung von Aufbau- und Ablauforganisation in enger Abstimmung mit dem Business", points: [] },
-      { title: "Begleitung von Transformationsprozessen mit Blick auf Kommunikation, Akzeptanz und Umsetzbarkeit", points: [] }
-    ]
-  },
-  {
-    title: "Talentgewinnung und strategische Personalplanung",
-    subs: [
-      { title: "Unterstützung bei Personalbedarfsplanung und zielgerichteter Besetzung kritischer Rollen", points: [] },
-      { title: "Entwicklung und Umsetzung geeigneter Recruiting- und Active-Sourcing-Strategien", points: [] },
-      { title: "Identifikation von Talentbedarfen sowie Aufbau nachhaltiger Talentpools und Nachfolgestrukturen", points: [] }
-    ]
-  },
-  {
-    title: "Sicherstellung arbeitsrechtlicher, prozessualer und operativer HR-Exzellenz",
-    subs: [
-      { title: "Beratung in arbeitsrechtlich relevanten Fragestellungen und Begleitung personeller Einzelmaßnahmen", points: [] },
-      { title: "Optimierung und Standardisierung von HR-Prozessen und Richtlinien", points: [] },
-      { title: "Vertrauensvolle Zusammenarbeit mit dem Betriebsrat in mitbestimmungsrelevanten und personalpolitischen Themen", points: [] }
-    ]
+  en: {
+    "nav-about":   "About me",
+    "nav-skills":  "Skills",
+    "nav-career":  "Career",
+    "nav-contact": "Contact",
+    "hero-role":   "HR Business Partner",
+    "hero-sub":    "empathetic · principled · strategic · communicative · solution-driven",
+    "bar-about":   "About me",
+    "bar-skills":  "Skills",
+    "bar-career":  "Career",
+    "bar-contact": "Contact",
+    "about-p1":    "With over ten years of experience in human resources management, I am a versatile HR generalist with solid expertise across the entire employee lifecycle. My work in staffing services has given me deep insight into the HR processes of a wide range of companies and industries, which I have complemented with hands-on experience in an HR role within a manufacturing environment.",
+    "about-p2":    "Strong communication skills, assertiveness and a feel for people are just as characteristic of my work as a pragmatic, solution-oriented approach. With a positive attitude and a good sense of humour, I build trusted relationships, guide organisations through change and position HR as a reliable, business-minded partner.",
+    "fl-age-l":    "Age",
+    "fl-loc-l":    "Location",
+    "fl-pos-l":    "Current role",
+    "fl-reg-l":    "Region",
+    "fl-exp-l":    "Experience",
+    "fl-exp-v":    "10+ years in HR Management",
+    "career-p1":   "With a commercial background and an early entry into HR, I have purposefully built my career at the intersection of human resources, recruiting, sales and organisational development. Key positions in staffing companies involved establishing robust structures, developing and implementing effective recruiting and active-sourcing strategies, supporting HR processes and collaborating in an international context — including assignments abroad. My profile is further shaped by experience as a lecturer at international universities, strong communication skills, a feel for people and a clear entrepreneurial mindset.",
+    "career-p2":   "Moving into manufacturing allowed me to apply this expertise in a production environment and take on leadership responsibility up to the level of authorised signatory (Prokura). Close collaboration with senior management, accountability for site operations, staff and structures, and the advancement of processes at both operational and strategic levels further sharpened my profile as an HR generalist and business-minded leader. Today I combine this experience with my role as Senior Business Consultant, bringing a high standard of practical, impactful HR work.",
+    "career-p3":   "Since May 2026 I hold the qualification of certified HR Specialist (IHK — German Chamber of Commerce and Industry), complementing my practical HR expertise with a solid theoretical foundation.",
+    "career-p4":   "Outside of work I am very much a family person with a passion for board games, model building and cooking.",
+    "career-p5":   "I am happy to provide my full application documents upon request.",
+    "ct-email-l":  "Email",
+    "ct-phone-l":  "Phone",
+    "ct-loc-l":    "Location",
   }
-];
+};
 
-const acc = document.getElementById('accordion');
-
-data.forEach((item, i) => {
-  const wrap = document.createElement('div');
-  wrap.className = 'acc-item';
-
-  const head = document.createElement('button');
-  head.className = 'acc-head';
-  head.setAttribute('aria-expanded','false');
-  head.innerHTML = '<span>' + item.title + '</span><span class="plus">+</span>';
-
-  const panel = document.createElement('div');
-  panel.className = 'acc-panel';
-  const panelInner = document.createElement('div');
-  panelInner.className = 'acc-panel-inner';
-
-  item.subs.forEach(sub => {
-    const subWrap = document.createElement('div');
-    subWrap.className = 'sub-item';
-
-    const subHead = document.createElement('div');
-    subHead.className = 'sub-head';
-    subHead.innerHTML = '<span>' + sub.title + '</span>';
-
-    if(sub.points.length){
-      const subPanelInner = document.createElement('div');
-      subPanelInner.className = 'sub-panel-inner';
-      const ul = document.createElement('ul');
-      sub.points.forEach(p => {
-        const li = document.createElement('li');
-        li.textContent = p;
-        ul.appendChild(li);
-      });
-      subPanelInner.appendChild(ul);
-      subWrap.appendChild(subHead);
-      subWrap.appendChild(subPanelInner);
-    } else {
-      subWrap.appendChild(subHead);
+// ─── COMPETENCIES DATA ───────────────────────────────────────────────────────
+const compData = {
+  de: [
+    {
+      title: "Strategische Beratung an der Schnittstelle von HR und Business",
+      subs: [
+        "Übersetzung unternehmerischer Ziele in wirksame personalstrategische Maßnahmen",
+        "Beratung von Management und Führungskräften bei organisatorischen und personellen Entscheidungen",
+        "Auswertung relevanter KPI als Grundlage für personalstrategische Empfehlungen und Entscheidungen"
+      ]
+    },
+    {
+      title: "Sparring und Unterstützung von Führungskräften",
+      subs: [
+        "Beratung in Führungsfragen, Konfliktsituationen und anspruchsvollen Mitarbeitergesprächen",
+        "Unterstützung bei der Entwicklung eines zeitgemäßen Führungsverständnisses und einer modernen Unternehmenskultur",
+        "Begleitung von Führungskräften in Veränderungsprozessen und bei schwierigen Entscheidungen"
+      ]
+    },
+    {
+      title: "Gestaltung des Employee Lifecycles",
+      subs: [
+        "Begleitung aller relevanten Phasen vom Recruiting über Onboarding und Entwicklung bis hin zu Trennungssituationen",
+        "Sicherstellung einer konsistenten und positiven Employee Experience entlang des gesamten Beschäftigungsverhältnisses",
+        "Entwicklung passender Maßnahmen zur Mitarbeiterbindung, Leistungsförderung und Nachfolgeplanung"
+      ]
+    },
+    {
+      title: "Begleitung von Veränderungs- und Organisationsentwicklungsprozessen",
+      subs: [
+        "Unterstützung bei Restrukturierungen, Wachstumsphasen und kulturellen Veränderungsprozessen",
+        "Weiterentwicklung von Aufbau- und Ablauforganisation in enger Abstimmung mit dem Business",
+        "Begleitung von Transformationsprozessen mit Blick auf Kommunikation, Akzeptanz und Umsetzbarkeit"
+      ]
+    },
+    {
+      title: "Talentgewinnung und strategische Personalplanung",
+      subs: [
+        "Unterstützung bei Personalbedarfsplanung und zielgerichteter Besetzung kritischer Rollen",
+        "Entwicklung und Umsetzung geeigneter Recruiting- und Active-Sourcing-Strategien",
+        "Identifikation von Talentbedarfen sowie Aufbau nachhaltiger Talentpools und Nachfolgestrukturen"
+      ]
+    },
+    {
+      title: "Sicherstellung arbeitsrechtlicher, prozessualer und operativer HR-Exzellenz",
+      subs: [
+        "Beratung in arbeitsrechtlich relevanten Fragestellungen und Begleitung personeller Einzelmaßnahmen",
+        "Optimierung und Standardisierung von HR-Prozessen und Richtlinien",
+        "Vertrauensvolle Zusammenarbeit mit dem Betriebsrat in mitbestimmungsrelevanten und personalpolitischen Themen"
+      ]
     }
-    panelInner.appendChild(subWrap);
+  ],
+  en: [
+    {
+      title: "Strategic Advisory at the Interface of HR and Business",
+      subs: [
+        "Translating business objectives into effective people strategy and HR measures",
+        "Advising management and leaders on organisational and personnel decisions",
+        "Analysing relevant KPIs as the basis for strategic HR recommendations and decisions"
+      ]
+    },
+    {
+      title: "Sparring Partner and Support for Leaders",
+      subs: [
+        "Advising on leadership matters, conflict situations and challenging employee conversations",
+        "Supporting the development of a contemporary leadership culture and modern organisational values",
+        "Guiding leaders through change processes and difficult decisions"
+      ]
+    },
+    {
+      title: "Shaping the Employee Lifecycle",
+      subs: [
+        "Supporting all key phases from recruiting and onboarding through development to separation",
+        "Ensuring a consistent and positive employee experience across the entire employment relationship",
+        "Developing tailored measures for employee retention, performance and succession planning"
+      ]
+    },
+    {
+      title: "Driving Change and Organisational Development",
+      subs: [
+        "Supporting restructuring, growth phases and cultural change initiatives",
+        "Advancing organisational structures and processes in close collaboration with the business",
+        "Guiding transformation with a focus on communication, acceptance and implementability"
+      ]
+    },
+    {
+      title: "Talent Acquisition and Strategic Workforce Planning",
+      subs: [
+        "Supporting workforce planning and targeted recruitment for critical roles",
+        "Developing and executing recruiting and active-sourcing strategies",
+        "Identifying talent needs and building sustainable talent pools and succession structures"
+      ]
+    },
+    {
+      title: "Ensuring Legal, Process and Operational HR Excellence",
+      subs: [
+        "Advising on employment law matters and managing individual HR measures",
+        "Optimising and standardising HR processes and policies",
+        "Trusted collaboration with the works council on co-determination and personnel policy topics"
+      ]
+    }
+  ]
+};
+
+// ─── RENDER ACCORDION ────────────────────────────────────────────────────────
+function renderAccordion(lang){
+  const acc = document.getElementById('accordion');
+  acc.innerHTML = '';
+  compData[lang].forEach(item => {
+    const wrap = document.createElement('div');
+    wrap.className = 'acc-item';
+
+    const head = document.createElement('button');
+    head.className = 'acc-head';
+    head.setAttribute('aria-expanded','false');
+    head.innerHTML = '<span>' + item.title + '</span><span class="plus">+</span>';
+
+    const panel = document.createElement('div');
+    panel.className = 'acc-panel';
+    const panelInner = document.createElement('div');
+    panelInner.className = 'acc-panel-inner';
+
+    item.subs.forEach(sub => {
+      const subWrap = document.createElement('div');
+      subWrap.className = 'sub-item';
+      const subHead = document.createElement('div');
+      subHead.className = 'sub-head';
+      subHead.innerHTML = '<span>' + sub + '</span>';
+      subWrap.appendChild(subHead);
+      panelInner.appendChild(subWrap);
+    });
+
+    panel.appendChild(panelInner);
+
+    head.addEventListener('click', () => {
+      const isOpen = head.getAttribute('aria-expanded') === 'true';
+      head.setAttribute('aria-expanded', String(!isOpen));
+      panel.classList.toggle('open', !isOpen);
+    });
+
+    wrap.appendChild(head);
+    wrap.appendChild(panel);
+    acc.appendChild(wrap);
+  });
+}
+
+// ─── LANGUAGE SWITCH ─────────────────────────────────────────────────────────
+let currentLang = 'de';
+
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+  const strings = t[lang];
+  Object.keys(strings).forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.textContent = strings[id];
   });
 
-  panel.appendChild(panelInner);
+  renderAccordion(lang);
+}
 
-  head.addEventListener('click', () => {
-    const isOpen = head.getAttribute('aria-expanded') === 'true';
-    head.setAttribute('aria-expanded', String(!isOpen));
-    panel.classList.toggle('open', !isOpen);
-  });
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+renderAccordion('de');
 
-  wrap.appendChild(head);
-  wrap.appendChild(panel);
-  acc.appendChild(wrap);
-});
-
-// ---------- Landing page bars ----------
-const barHeads = document.querySelectorAll('.bar-head');
-
+// ─── BAR ACCORDION ───────────────────────────────────────────────────────────
 function openBar(head){
   const panel = document.getElementById(head.getAttribute('data-target'));
   head.setAttribute('aria-expanded','true');
@@ -462,27 +526,19 @@ function closeBar(head){
   panel.classList.remove('open');
 }
 
-barHeads.forEach(head => {
+document.querySelectorAll('.bar-head').forEach(head => {
   head.addEventListener('click', () => {
     const isOpen = head.getAttribute('aria-expanded') === 'true';
-    if(isOpen){
-      closeBar(head);
-    } else {
-      openBar(head);
-    }
+    isOpen ? closeBar(head) : openBar(head);
   });
 });
 
-// Nav links open the matching bar and scroll to it
 document.querySelectorAll('nav a[data-open]').forEach(link => {
-  link.addEventListener('click', (e) => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const targetId = link.getAttribute('data-open');
-    const head = document.querySelector('.bar-head[data-target="' + targetId + '"]');
+    const head = document.querySelector('.bar-head[data-target="' + link.getAttribute('data-open') + '"]');
     if(head){
-      if(head.getAttribute('aria-expanded') !== 'true'){
-        openBar(head);
-      }
+      if(head.getAttribute('aria-expanded') !== 'true') openBar(head);
       head.scrollIntoView({behavior:'smooth', block:'start'});
     }
   });
